@@ -1,7 +1,7 @@
 "use client"; 
 import react,{ useEffect } from 'react';
 import Image from 'next/image'
-import styles from './page.module.css'
+import styles from '../page.module.css'
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { usePathname } from 'next/navigation'
@@ -10,7 +10,7 @@ import { Inter } from 'next/font/google'
 import Head from 'next/head';
 const inter = Inter({ subsets: ['latin'] })
 
-export default function IndexPage() {
+export default function Index() {
 
   const pathname = usePathname()
   let locationName = pathname.replace("/","");
@@ -19,23 +19,33 @@ export default function IndexPage() {
   
   return (
       <main>
+      
+      <head>
+        <title>{locationName3  + " | TheCodeCups is the power of custom software on rental basis at an incredible price of 4999 "}</title>
+        <meta name="description" content={locationName3 +" | TheCodeCups is the power of custom software on rental basis at an incredible price of 4999. Elevate your business with innovative solutions designed for your unique needs."} />
+        <link rel="stylesheet" href="/css/base.css" />
+        <link rel="stylesheet" href="/css/vendor.css" />
+        <link rel="stylesheet" href="/css/main.css"/>
+        
+        <Script src="js/modernizr.js" />
+        <Script src="js/pace.min.js" />
+        <Script src="js/jquery-3.2.1.min.js" />
+        <Script src="js/plugins.js" />
 
+    {/* <Script src="js/package.js" /> */}
 
-<Head>
-        <title>TheCodeCups is the power of custom software on rental basis at an incredible price of 4999</title>
-        <meta name="description" content={"TheCodeCups is the power of custom software on rental basis at an incredible price of 4999. Elevate your business with innovative solutions designed for your unique needs."} />
-        </Head>
-          
-
+  
+      </head>
+      
+      <body className={inter.className}>
          <div> 
-
-
+          
       {/* header
         ================================================== */}
       <header className="s-header">
         <div className="header-logo">
           <a className="site-logo" href="index.html">
-            <img src="images/logo.png" alt="Homepage"></img>
+            <img src="images/logo.png" alt="Homepage" />
           </a>
         </div>
         <nav className="header-nav">
@@ -117,7 +127,77 @@ export default function IndexPage() {
       {/* end s-header */}
       {/* home
         ================================================== */}
-      
+      <section
+        id="home"
+        className="s-home"
+        data-parallax="scroll"
+        data-image-src="https://giphy.com/embed/qgQUggAC3Pfv687qPC"
+        data-natural-width={3000}
+        data-natural-height={2000}
+        data-position-y="center"
+      >
+        <div className="overlay" />
+        <div className="shadow-overlay" />
+        <div className="home-content">
+          <div className="row home-content__main">
+            <h3>Welcome to  <span style={{color:'white'}}>TheCodeCups</span> {locationName3}</h3>
+            <h1>
+              Unlock Growth  <br />
+              with Custom Software Rental<br />
+              at Affordable Prices!<br />
+              digital experiences.
+            </h1>
+            <div className="home-content__buttons">
+              <a href="#contact" className="smoothscroll btn btn--stroke">
+                Start a Project
+              </a>
+              <a href="#about" className="smoothscroll btn btn--stroke">
+                More About Us
+              </a>
+            </div>
+          </div>
+          <div className="home-content__scroll">
+            <a href="#about" className="scroll-link smoothscroll">
+              <span>Scroll Down</span>
+            </a>
+          </div>
+          <div className="home-content__line" />
+        </div>{" "}
+        {/* end home-content */}
+        <ul className="home-social">
+          <li>
+            <a href="#0">
+              <i className="fa fa-facebook" aria-hidden="true" />
+              <span>Facebook</span>
+            </a>
+          </li>
+          <li>
+            <a href="#0">
+              <i className="fa fa-twitter" aria-hidden="true" />
+              <span>Twiiter</span>
+            </a>
+          </li>
+          <li>
+            <a href="#0">
+              <i className="fa fa-instagram" aria-hidden="true" />
+              <span>Instagram</span>
+            </a>
+          </li>
+          <li>
+            <a href="#0">
+              <i className="fa fa-behance" aria-hidden="true" />
+              <span>Behance</span>
+            </a>
+          </li>
+          <li>
+            <a href="#0">
+              <i className="fa fa-dribbble" aria-hidden="true" />
+              <span>Dribbble</span>
+            </a>
+          </li>
+        </ul>
+        {/* end home-social */}
+      </section>{" "}
       {/* end s-home */}
       {/* about
         ================================================== */}
@@ -548,7 +628,8 @@ export default function IndexPage() {
       
     
     <Script src="../js/main.js" />
-    </main>
+    </body>
+  </main>
     
    
   )

@@ -4,38 +4,38 @@ import Image from 'next/image'
 import styles from './page.module.css'
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { usePathname } from 'next/navigation'
-import Script from 'next/script'
-import { Inter } from 'next/font/google'
-import Head from 'next/head';
-const inter = Inter({ subsets: ['latin'] })
+import Head from 'next/head'
 
-export default function IndexPage() {
 
-  const pathname = usePathname()
-  let locationName = pathname.replace("/","");
-  let locationName2 = locationName.replace("-"," ");
-  let locationName3 = locationName2.replace("-"," ");
-  
+export default function Home() {
+
+  useEffect(()=>{
+    const firebaseConfig = {
+      apiKey: "AIzaSyDljym7QfwNKLJFLTOfn4ozTGQOA_puxQc",
+      authDomain: "thecodecups.firebaseapp.com",
+      projectId: "thecodecups",
+      storageBucket: "thecodecups.appspot.com",
+      messagingSenderId: "594859064249",
+      appId: "1:594859064249:web:d48911b7eb6c56b0239468",
+      measurementId: "G-BBQ8K406Y0"
+    };
+    
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  },[]);
+
   return (
-      <main>
+    <main>
+          <div> 
 
-
-<Head>
-        <title>TheCodeCups is the power of custom software on rental basis at an incredible price of 4999</title>
-        <meta name="description" content={"TheCodeCups is the power of custom software on rental basis at an incredible price of 4999. Elevate your business with innovative solutions designed for your unique needs."} />
-        </Head>
           
-
-         <div> 
-
-
       {/* header
         ================================================== */}
       <header className="s-header">
         <div className="header-logo">
           <a className="site-logo" href="index.html">
-            <img src="images/logo.png" alt="Homepage"></img>
+            <img src="images/logo.png" alt="Homepage" />
           </a>
         </div>
         <nav className="header-nav">
@@ -73,10 +73,9 @@ export default function IndexPage() {
               </li>
             </ul>
             <p>
-            Unlock Growth  <br />
-              with Custom Software Rental<br />
-              at Affordable Prices!<br />
-              digital experiences.
+              Perspiciatis hic praesentium nesciunt. Et neque a dolorum{" "}
+              <a href="#0">voluptatem</a> porro iusto sequi veritatis libero enim.
+              Iusto id suscipit veritatis neque reprehenderit.
             </p>
             <ul className="header-nav__social">
               <li>
@@ -117,7 +116,77 @@ export default function IndexPage() {
       {/* end s-header */}
       {/* home
         ================================================== */}
-      
+      <section
+        id="home"
+        className="s-home"
+        data-parallax="scroll"
+        data-image-src="https://giphy.com/embed/qgQUggAC3Pfv687qPC"
+        data-natural-width={3000}
+        data-natural-height={2000}
+        data-position-y="center"
+      >
+        <div className="overlay" />
+        <div className="shadow-overlay" />
+        <div className="home-content">
+          <div className="row home-content__main">
+            <h3>Welcome to <span style={{color:'white'}}>TheCodeCups</span></h3>
+            <h1>
+              Unlock Growth  <br />
+              with Custom Software Rental<br />
+              at Affordable Prices!<br />
+              digital experiences.
+            </h1>
+            <div className="home-content__buttons">
+              <a href="#contact" className="smoothscroll btn btn--stroke">
+                Start a Project
+              </a>
+              <a href="#about" className="smoothscroll btn btn--stroke">
+                More About Us
+              </a>
+            </div>
+          </div>
+          <div className="home-content__scroll">
+            <a href="#about" className="scroll-link smoothscroll">
+              <span>Scroll Down</span>
+            </a>
+          </div>
+          <div className="home-content__line" />
+        </div>{" "}
+        {/* end home-content */}
+        <ul className="home-social">
+          <li>
+            <a href="#0">
+              <i className="fa fa-facebook" aria-hidden="true" />
+              <span>Facebook</span>
+            </a>
+          </li>
+          <li>
+            <a href="#0">
+              <i className="fa fa-twitter" aria-hidden="true" />
+              <span>Twiiter</span>
+            </a>
+          </li>
+          <li>
+            <a href="#0">
+              <i className="fa fa-instagram" aria-hidden="true" />
+              <span>Instagram</span>
+            </a>
+          </li>
+          <li>
+            <a href="#0">
+              <i className="fa fa-behance" aria-hidden="true" />
+              <span>Behance</span>
+            </a>
+          </li>
+          <li>
+            <a href="#0">
+              <i className="fa fa-dribbble" aria-hidden="true" />
+              <span>Dribbble</span>
+            </a>
+          </li>
+        </ul>
+        {/* end home-social */}
+      </section>{" "}
       {/* end s-home */}
       {/* about
         ================================================== */}
@@ -132,11 +201,11 @@ export default function IndexPage() {
         <div className="row about-desc" data-aos="fade-up">
           <div className="col-full">
             <p style={{color:'#E3CCAE'}}>
-            {"At Codecups, we pride ourselves on being expert software developers, capable of crafting top-notch solutions tailored to your unique needs. With a passion for innovation and cutting-edge technologies, we are committed to transforming businesses and empowering them to reach new heights."}<br />
+            At Codecups, we pride ourselves on being expert software developers, capable of crafting top-notch solutions tailored to your unique needs. With a passion for innovation and cutting-edge technologies, we are committed to transforming businesses and empowering them to reach new heights.<br />
 
             {"Our team of dedicated developers possesses a wealth of experience across various industries, allowing us to understand the complexities and demands of your business. Whether you're a startup, small business, or a large enterprise, we have the expertise to build custom software that aligns perfectly with your objectives."}<br />
 
-            {"From web and mobile applications to enterprise solutions and beyond, our portfolio boasts a diverse range of successful projects. We excel in developing intuitive user interfaces, scalable backend systems, and seamless integrations, ensuring a smooth and delightful experience for both you and your end-users."}<br />
+            From web and mobile applications to enterprise solutions and beyond, our portfolio boasts a diverse range of successful projects. We excel in developing intuitive user interfaces, scalable backend systems, and seamless integrations, ensuring a smooth and delightful experience for both you and your end-users.<br />
             </p>
           </div>
         </div>{" "}
@@ -186,7 +255,7 @@ export default function IndexPage() {
             <div className="service-text">
               <h3 className="h2">Android Development</h3>
               <p>
-              {"At The Codecups, we are experts in Android app development. Our skilled team of developers is well-versed in the latest technologies and frameworks to create high-quality and feature-rich Android applications. Whether it's building intuitive user interfaces, integrating powerful functionalities, or ensuring seamless performance across various devices, we take pride in delivering top-notch Android apps that exceed our clients' expectations."}
+              {"At The Codecups, we are experts in Android app development. Our skilled team of developers is well-versed in the latest technologies and frameworks to create high-quality and feature-rich Android applications. Whether it's building intuitive user interfaces, integrating powerful functionalities, or ensuring seamless performance across various devices, we take pride in delivering top-notch Android apps that exceed our clients' expectations"}.
               </p>
             </div>
           </div>
@@ -545,11 +614,7 @@ export default function IndexPage() {
         </div>
       </div> */}
     </div>
-      
-    
-    <Script src="../js/main.js" />
+
     </main>
-    
-   
   )
 }

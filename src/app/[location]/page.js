@@ -1,7 +1,7 @@
 "use client"; 
 import react,{ useEffect } from 'react';
 import Image from 'next/image'
-import styles from './page.module.css'
+import styles from '../page.module.css'
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { usePathname } from 'next/navigation'
@@ -19,13 +19,6 @@ export default function IndexPage() {
   
   return (
       <main>
-
-
-<Head>
-        <title>TheCodeCups is the power of custom software on rental basis at an incredible price of 4999</title>
-        <meta name="description" content={"TheCodeCups is the power of custom software on rental basis at an incredible price of 4999. Elevate your business with innovative solutions designed for your unique needs."} />
-        </Head>
-          
 
          <div> 
 
