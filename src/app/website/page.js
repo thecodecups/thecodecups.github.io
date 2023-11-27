@@ -1,7 +1,7 @@
 "use client"; 
 import react,{ useEffect } from 'react';
 import Image from 'next/image'
-import styles from './page.module.css'
+import styles from '../page.module.css'
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { usePathname } from 'next/navigation'
@@ -20,13 +20,6 @@ export default function IndexPage() {
   
   return (
       <main>
-
-
-<Head>
-        <title>TheCodeCups is the power of custom software on rental basis at an incredible price of 4999</title>
-        <meta name="description" content={"TheCodeCups is the power of custom software on rental basis at an incredible price of 4999. Elevate your business with innovative solutions designed for your unique needs."} />
-        </Head>
-          
 
          <div> 
 
@@ -73,7 +66,11 @@ export default function IndexPage() {
                 </a>
               </li>
 
-              
+              <li>
+                <Link href="/website-development-in-noida">
+                    Test
+                </Link>
+              </li>
 
             </ul>
             <p>
@@ -128,7 +125,7 @@ export default function IndexPage() {
       <section id="about" className="s-about">
         <div className="row section-header has-bottom-sep" data-aos="fade-up">
           <div className="col-full">
-            <h3 className="subhead subhead--dark">Hello There</h3>
+            <h3 className="subhead subhead--dark">This is Demo Website</h3>
             <h1 className="display-1 display-1--light">We Are <span style={{color:'white'}}>TheCodeCups</span></h1>
           </div>
         </div>{" "}
