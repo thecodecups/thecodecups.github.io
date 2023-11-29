@@ -10,7 +10,7 @@ import { Inter } from 'next/font/google'
 import Head from 'next/head';
 const inter = Inter({ subsets: ['latin'] })
 import Link from 'next/link';
-
+import { useSearchParams } from 'next/navigation';
 export default function IndexPage() {
 
   const pathname = usePathname()
@@ -18,6 +18,8 @@ export default function IndexPage() {
   let locationName2 = locationName.replace("-"," ");
   let locationName3 = locationName2.replace("-"," ");
   
+  let quotes_data = (useSearchParams().get("query")).replace(/-/g," ");
+
   return (
       <main>
 
@@ -125,7 +127,7 @@ export default function IndexPage() {
       <section id="about" className="s-about">
         <div className="row section-header has-bottom-sep" data-aos="fade-up">
           <div className="col-full">
-            <h3 className="subhead subhead--dark">This is Demo Website</h3>
+            <h3 className="subhead subhead--dark">{quotes_data}</h3>
             <h1 className="display-1 display-1--light">We Are <span style={{color:'white'}}>TheCodeCups</span></h1>
           </div>
         </div>{" "}

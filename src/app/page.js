@@ -20,16 +20,7 @@ export default function IndexPage() {
   
   return (
       <main>
-
-
-<Head>
-        <title>TheCodeCups is the power of custom software on rental basis at an incredible price of 4999</title>
-        <meta name="description" content={"TheCodeCups is the power of custom software on rental basis at an incredible price of 4999. Elevate your business with innovative solutions designed for your unique needs."} />
-        </Head>
-          
-
          <div> 
-
 
       {/* header
         ================================================== */}
