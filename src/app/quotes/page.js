@@ -11,14 +11,20 @@ import Head from 'next/head';
 const inter = Inter({ subsets: ['latin'] })
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
+
+
 export default function IndexPage() {
 
   const pathname = usePathname()
   let locationName = pathname.replace("/","");
   let locationName2 = locationName.replace("-"," ");
   let locationName3 = locationName2.replace("-"," ");
+  let quotes_data = ""
+  if (typeof window !== 'undefined') {
+    quotes_data = ((window.location.search).replace("?query=","")).replace(/-/g," ");
+  }
+
   
-  let quotes_data = (useSearchParams().get("query")).replace(/-/g," ");
 
   return (
       <main>

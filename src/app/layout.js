@@ -15,15 +15,19 @@ export default function RootLayout({ children }) {
   let locationName3 = locationName2.replace("-"," ");
 
   let quotes_data = "";
-  if(locationName3 != ""){
-    quotes_data = (useSearchParams().get("query")).replace(/-/g," ");
-  }
-  const completeURL = window.location.href;
+  let completeURL = "";
   
-  useEffect(()=>{
+  if(locationName3 != ""){
     
-  },[]);
+    if (typeof window !== 'undefined') {
+      quotes_data = ((window.location.search).replace("?query=","")).replace(/-/g," ");
+      completeURL = window.location.href;
+    }
 
+    
+  }
+  
+  
   return (
     <html lang="en">
   
